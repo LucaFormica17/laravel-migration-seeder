@@ -17,7 +17,11 @@
 
     <body>
 
-        
+        @foreach ($trains as $train)
+            @if ($train->departure_time == '2024-02-15')
+                {{$train}}
+            @endif
+        @endforeach
 
     </body>
 

@@ -18,12 +18,12 @@ return new class extends Migration
             $table->string('factory', 50);
             $table->string('departure_station', 30);
             $table->string('arrival_station', 30);
-            $table->date('departure_time');
-            $table->date('arrival_time');
-            $table->string('train_code', 10);
+            $table->date('departure_time')->format();
+            $table->date('arrival_time')->format();
+            $table->string('train_code', 50);
             $table->tinyInteger('n_train_cars')->unsigned();
-            $table->tinyInteger('delay')->unsigned()->default(0);
-            $table->tinyInteger('deleted')->unsigned()->default(0);
+            $table->boolean('delay')->default(0);
+            $table->boolean('deleted')->default(0);
             $table->timestamps();
         });
     }
